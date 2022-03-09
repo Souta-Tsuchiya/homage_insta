@@ -2,7 +2,7 @@
     package="com.hayabusa.example.homage_insta">
    <application
         android:label="homage_insta"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@mipmap/launcher_icon">
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"
