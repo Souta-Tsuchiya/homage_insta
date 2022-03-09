@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "608368563600",
+    "project_id": "homageinsta-be80a",
+    "storage_bucket": "homageinsta-be80a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:608368563600:android:3c80762c4c82ec1b710f15",
+        "android_client_info": {
+          "package_name": "com.hayabusa.example.homage_insta"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "608368563600-c38qivb8e9qq7c74puuf98g336t9i85o.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.hayabusa.example.homage_insta",
+            "certificate_hash": "21315f421acbec2babef93bdc0fd489f21254fdb"
+          }
+        },
+        {
+          "client_id": "608368563600-7u29lg5v25uh91b2igu9t6vs91ke04hg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBZSYFSexM_0z---zNTBZE3_reNQHrrzbs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "608368563600-7u29lg5v25uh91b2igu9t6vs91ke04hg.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "608368563600-bthojqr7qmtmnlpbf0alp9rj65qhb4r2.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.hayabusa.example.homageInsta"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
