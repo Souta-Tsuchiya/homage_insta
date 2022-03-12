@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:homage_insta/di/providers.dart';
 import 'package:homage_insta/firebase_options.dart';
 import 'package:homage_insta/generated/l10n.dart';
 import 'package:homage_insta/view/home/home_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:homage_insta/view/login/login_screen.dart';
+import 'package:homage_insta/view_model/login_view_model.dart';
 import 'package:provider/provider.dart';
 
 void main() async {
@@ -23,6 +24,11 @@ void main() async {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final loginViewModel = context.read<LoginViewModel>();
+    Future(() {
+      loginViewModel.checkSignIn();
+    });
+
     return MaterialApp(
       title: "オマージュインスタ",
       debugShowCheckedModeBanner: false,
@@ -40,7 +46,16 @@ class MyApp extends StatelessWidget {
         GlobalCupertinoLocalizations.delegate,
       ],
       supportedLocales: S.delegate.supportedLocales,
-      home: HomeScreen(),
+      home: Selector<LoginViewModel, bool>(
+        selector: (context, loginViewModel) => loginViewModel.isLogin,
+        builder: (context, isLogin, child) {
+          if (isLogin) {
+            return HomeScreen();
+          } else {
+            return LoginScreen();
+          }
+        },
+      ),
     );
   }
 }

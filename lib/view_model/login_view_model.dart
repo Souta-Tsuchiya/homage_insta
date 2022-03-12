@@ -6,5 +6,11 @@ class LoginViewModel extends ChangeNotifier {
 
   LoginViewModel({required this.userRepository});
 
-  onUpdate(UserRepository userRepository) {}
+  bool _isLogin = false;
+  bool get isLogin => _isLogin;
+
+  Future<void> checkSignIn() async{
+    _isLogin = await userRepository.checkSignIn();
+    notifyListeners();
+  }
 }
