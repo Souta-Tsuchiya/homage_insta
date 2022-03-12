@@ -15,6 +15,9 @@ class LoginViewModel extends ChangeNotifier {
   bool _isSuccess = false;
   bool get isSuccess => _isSuccess;
 
+  int _bottomNavigationBarIndex = 0;
+  int get bottomNavigationBarIndex => _bottomNavigationBarIndex;
+
   Future<void> checkSignIn() async{
     _isSignIn = await userRepository.checkSignIn();
     notifyListeners();
@@ -26,6 +29,11 @@ class LoginViewModel extends ChangeNotifier {
 
     _isSuccess = await userRepository.signIn();
     _isLoading = false;
+    notifyListeners();
+  }
+
+  void changeNavigation(int index) {
+    _bottomNavigationBarIndex = index;
     notifyListeners();
   }
 }
