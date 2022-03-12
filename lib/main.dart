@@ -47,9 +47,9 @@ class MyApp extends StatelessWidget {
       ],
       supportedLocales: S.delegate.supportedLocales,
       home: Selector<LoginViewModel, bool>(
-        selector: (context, loginViewModel) => loginViewModel.isLogin,
-        builder: (context, isLogin, child) {
-          if (isLogin) {
+        selector: (context, loginViewModel) => loginViewModel.isSignIn,
+        builder: (context, isSignIn, child) {
+          if (isSignIn) {
             return HomeScreen();
           } else {
             return LoginScreen();
