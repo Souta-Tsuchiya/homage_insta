@@ -37,7 +37,7 @@ class MyApp extends StatelessWidget {
         primaryIconTheme: IconThemeData(color: Colors.white),
         iconTheme: IconThemeData(color: Colors.white),
         elevatedButtonTheme:
-            ElevatedButtonThemeData(style: ElevatedButton.styleFrom(primary: Colors.white)),
+            ElevatedButtonThemeData(style: ElevatedButton.styleFrom(primary: Colors.white30)),
       ),
       localizationsDelegates: [
         S.delegate,
