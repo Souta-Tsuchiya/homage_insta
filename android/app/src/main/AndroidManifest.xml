@@ -1,5 +1,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.hayabusa.example.homage_insta">
+
+    <queries>
+        <intent>
+            <action android:name="android.media.action.IMAGE_CAPTURE" />
+        </intent>
+    </queries>
    <application
         android:label="homage_insta"
         android:icon="@mipmap/launcher_icon">
