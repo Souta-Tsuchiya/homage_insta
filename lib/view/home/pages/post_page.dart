@@ -3,8 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:homage_insta/generated/l10n.dart';
 import 'package:homage_insta/util/const.dart';
 import 'package:homage_insta/view/common_components/button_with_icon.dart';
-
-import '../screens/post_upload_screen.dart';
+import 'package:homage_insta/view/home/pages/screens/post_upload_screen.dart';
 
 class PostPage extends StatelessWidget {
   const PostPage({Key? key}) : super(key: key);

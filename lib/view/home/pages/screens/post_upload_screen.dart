@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:homage_insta/generated/l10n.dart';
 import 'package:homage_insta/util/const.dart';
 import 'package:homage_insta/view_model/post_view_model.dart';
 import 'package:provider/provider.dart';
-
-import '../../../generated/l10n.dart';
-import '../pages/post_components/post_caption_part.dart';
-import '../pages/post_components/post_location_part.dart';
+import '../post_components/post_caption_part.dart';
+import '../post_components/post_location_part.dart';
 
 class PostUploadScreen extends StatelessWidget {
   final PostUploadType uploadType;

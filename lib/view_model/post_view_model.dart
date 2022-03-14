@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:homage_insta/data/location.dart';
 import 'package:homage_insta/model/repositories/user_repository.dart';
 import 'package:homage_insta/util/const.dart';
@@ -59,6 +60,15 @@ class PostViewModel extends ChangeNotifier {
 
   void onCaptionUpdated(String value) {
     _postCaption = value;
+  }
+
+
+  GoogleMapController? _googleMapController;
+  GoogleMapController? get googleMapController => _googleMapController;
+
+  void onMapCreated(GoogleMapController controller) {
+    _googleMapController = controller;
+    notifyListeners();
   }
 
 }

@@ -72,6 +72,7 @@
     <key>NSMicrophoneUsageDescription</key>
     <string>Your Microphone is required for this app</string>
     <!-- End of 画像取得 Section -->
+
     <!-- geoLocator Section -->
     <key>NSLocationWhenInUseUsageDescription</key>
     <string>This app needs access to location when open.</string>
