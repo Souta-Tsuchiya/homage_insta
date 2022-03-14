@@ -1,4 +1,5 @@
 import 'package:homage_insta/model/managers/database_manager.dart';
+import 'package:homage_insta/model/managers/location_manager.dart';
 import 'package:homage_insta/model/repositories/post_repository.dart';
 import 'package:homage_insta/model/repositories/user_repository.dart';
 import 'package:homage_insta/view_model/login_view_model.dart';
@@ -16,6 +17,9 @@ List<SingleChildWidget> independentModels = [
   Provider(
     create: (context) => DatabaseManager(),
   ),
+  Provider(
+    create: (context) => LocationManager(),
+  ),
 ];
 
 List<SingleChildWidget> dependentModels = [
@@ -23,9 +27,9 @@ List<SingleChildWidget> dependentModels = [
     update: (context, databaseManager, userRepository) =>
         UserRepository(dbManager: databaseManager),
   ),
-  ProxyProvider<DatabaseManager, PostRepository>(
-    update: (context, databaseManager, postRepository) =>
-        PostRepository(dbManager: databaseManager),
+  ProxyProvider2<DatabaseManager, LocationManager, PostRepository>(
+    update: (context, databaseManager, locationManager, postRepository) =>
+        PostRepository(dbManager: databaseManager, locationManager: locationManager),
   ),
 ];
 
