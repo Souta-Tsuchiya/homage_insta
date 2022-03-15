@@ -62,13 +62,12 @@ class PostViewModel extends ChangeNotifier {
     _postCaption = value;
   }
 
+  Future<void> changeLocation(double latitude, double longitude) async{
+    _location = await postRepository.changeLocation(latitude, longitude);
+    _locationString = _location != null ? _locationToString(_location!) : "";
 
-  GoogleMapController? _googleMapController;
-  GoogleMapController? get googleMapController => _googleMapController;
-
-  void onMapCreated(GoogleMapController controller) {
-    _googleMapController = controller;
     notifyListeners();
   }
+
 
 }

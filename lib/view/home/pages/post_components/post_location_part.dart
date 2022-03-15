@@ -16,9 +16,14 @@ class PostLocationPart extends StatelessWidget {
     final postViewModel = context.read<PostViewModel>();
     final location = postViewModel.location;
     return ListTile(
-      title: Text(
-        postViewModel.locationString,
-        style: TextStyle(fontFamily: RegularFont, fontSize: 16.0),
+      title: Selector<PostViewModel, String>(
+        selector: (context, postViewModel) => postViewModel.locationString,
+        builder: (context, locationString, child) {
+          return Text(
+            postViewModel.locationString,
+            style: TextStyle(fontFamily: RegularFont, fontSize: 16.0),
+          );
+        },
       ),
       subtitle: Wrap(
         crossAxisAlignment: WrapCrossAlignment.center,
@@ -27,7 +32,12 @@ class PostLocationPart extends StatelessWidget {
           SizedBox(
             width: 8.0,
           ),
-          Text(location != null ? location.latitude.toStringAsFixed(2) : "0.00"),
+          Selector<PostViewModel, Location?>(
+            selector: (context, postViewModel) => postViewModel.location,
+            builder: (context, location, child) {
+              return Text(location != null ? location.latitude.toStringAsFixed(2) : "0.00");
+            },
+          ),
           SizedBox(
             width: 8.0,
           ),
@@ -35,7 +45,12 @@ class PostLocationPart extends StatelessWidget {
           SizedBox(
             width: 8.0,
           ),
-          Text(location != null ? location.longitude.toStringAsFixed(2) : "0.00"),
+          Selector<PostViewModel, Location?>(
+            selector: (context, postViewModel) => postViewModel.location,
+            builder: (context, location, child) {
+              return Text(location != null ? location.longitude.toStringAsFixed(2) : "0.00");
+            },
+          ),
         ],
       ),
       trailing: IconButton(
@@ -46,7 +61,7 @@ class PostLocationPart extends StatelessWidget {
   }
 
   _displayMap(BuildContext context, Location? location) {
-    if(location == null) return;
+    if (location == null) return;
 
     Navigator.push(
       context,

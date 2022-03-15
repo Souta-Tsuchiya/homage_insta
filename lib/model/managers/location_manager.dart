@@ -41,4 +41,19 @@ class LocationManager {
       ),
     );
   }
+
+  Future<Location> changeLocation(double latitude, double longitude) async{
+    final placeMarks =
+    await geoCoding.placemarkFromCoordinates(latitude, longitude);
+    final placeMark = placeMarks.first;
+    return Future.value(
+        Location(
+          latitude: latitude,
+          longitude: longitude,
+          country: placeMark.country ?? "",
+          state: placeMark.administrativeArea ?? "",
+          city: placeMark.locality ?? "",
+        ),
+    );
+  }
 }
